@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenal Football Club - Official Fanpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --arsenal-red: #EF0107;
+            --arsenal-dark: #061939;
+            --arsenal-gold: #9C824A;
+            --bg-light: #F8F9FA;
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--arsenal-dark);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--arsenal-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--arsenal-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(6, 25, 57, 0.8), rgba(239, 1, 7, 0.8)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--arsenal-red);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c50005;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2.section-title {
+            font-size: 2rem;
+            color: var(--arsenal-dark);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--arsenal-red);
+            padding-left: 15px;
+        }
+
+        /* History */
+        .history-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Players Grid */
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .player-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .player-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .player-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .player-info {
+            padding: 20px;
+        }
+
+        .player-info h3 {
+            color: var(--arsenal-dark);
+            margin-bottom: 5px;
+        }
+
+        .player-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Honours Table */
+        .honours-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .honour-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--arsenal-gold);
+        }
+
+        .honour-item h3 {
+            font-size: 2.5rem;
+            color: var(--arsenal-red);
+            margin-bottom: 10px;
+        }
+
+        /* Developer Section */
+        .developer-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .dev-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+            border: 4px solid var(--arsenal-red);
+        }
+
+        .dev-info h3 {
+            color: var(--arsenal-dark);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .dev-info p {
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--arsenal-dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* สามารถเพิ่ม Mobile Menu JavaScript ทีหลังได้ */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .developer-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">🔴 <span>ARSENAL FC</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#history">ประวัติสโมสร</a></li>
+                    <li><a href="#players">รายชื่อผู้เล่น</a></li>
+                    <li><a href="#honours">ผลงานและความสำเร็จ</a></li>
+                    <li><a href="#developer">ติดต่อผู้พัฒนา</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>WELCOME TO ARSENAL FANPAGE</h1>
+        <p>Victoria Concordia Crescit - ชัยชนะเติบโตจากความสามัคคี</p>
+        <a href="#history" class="btn">เรียนรู้เพิ่มเติม</a>
+    </section>
+
+    <div class="container">
+        
+        <!-- ประวัติความเป็นมา -->
+        <section id="history">
+            <h2 class="section-title">ประวัติการก่อตั้งทีม</h2>
+            <div class="history-content">
+                <p>สโมสรฟุตบอลอาร์เซนอล (Arsenal Football Club) ก่อตั้งขึ้นในปี ค.ศ. 1886 (พ.ศ. 2429) ที่แขวงวูลวิช ทางตะวันออกเฉียงใต้ของกรุงลอนดอน โดยกลุ่มคนงานจากโรงงานผลิตอาวุธรอยัลอาร์เซนอล ก่อนที่จะย้ายมายังสนามไฮบิวรี ทางตอนเหนือของลอนดอนในปี 1913 และปัจจุบันย้ายมาอยู่ที่สนามเอมิเรตส์สเตเดียม ตั้งแต่ปี 2006 เป็นต้นมา อาร์เซนอลถือเป็นหนึ่งในสโมสรที่ประสบความสำเร็จมากที่สุดในฟุตบอลอังกฤษ</p>
+            </div>
+        </section>
+
+        <!-- รายชื่อผู้เล่น -->
+        <section id="players">
+            <h2 class="section-title">รายชื่อผู้เล่นคนสำคัญ</h2>
+            <div class="players-grid">
+                <!-- ผู้เล่นที่ 1 -->
+                <div class="player-card">
+                    <div class="player-img" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="player-info">
+                        <h3>Bukayo Saka</h3>
+                        <p>ตำแหน่ง: ปีกขวา (Winger)</p>
+                    </div>
+                </div>
+                <!-- ผู้เล่นที่ 2 -->
+                <div class="player-card">
+                    <div class="player-img" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="player-info">
+                        <h3>Martin Ødegaard</h3>
+                        <p>ตำแหน่ง: กองกลางตัวรุก / กัปตันทีม</p>
+                    </div>
+                </div>
+                <!-- ผู้เล่นที่ 3 -->
+                <div class="player-card">
+                    <div class="player-img" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="player-info">
+                        <h3>Declan Rice</h3>
+                        <p>ตำแหน่ง: กองกลางตัวรับ (Midfielder)</p>
+                    </div>
+                </div>
+                <!-- ผู้เล่นที่ 4 -->
+                <div class="player-card">
+                    <div class="player-img" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="player-info">
+                        <h3>William Saliba</h3>
+                        <p>ตำแหน่ง: กองหลัง (Defender)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ผลงานและความสำเร็จ -->
+        <section id="honours">
+            <h2 class="section-title">ผลงานและความสำเร็จ (Honours)</h2>
+            <div class="honours-list">
+                <div class="honour-item">
+                    <h3>13</h3>
+                    <p>First Division / Premier League</p>
+                </div>
+                <div class="honour-item">
+                    <h3>14</h3>
+                    <p>FA Cup (สถิติสูงสุด)</p>
+                </div>
+                <div class="honour-item">
+                    <h3>2</h3>
+                    <p>League Cup</p>
+                </div>
+                <div class="honour-item">
+                    <h3>17</h3>
+                    <p>FA Community Shield</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ส่วนติดต่อผู้พัฒนา -->
+        <section id="developer">
+            <h2 class="section-title">ติดต่อผู้พัฒนาเว็บไซต์</h2>
+            <div class="developer-section">
+                <!-- สามารถเปลี่ยนรูปภาพผู้พัฒนาได้ที่ URL รูปภาพด้านล่างนี้ -->
+                <div class="dev-photo" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="dev-info">
+                    <h3>คุณชาญ หลวงตุ้ย</h3>
+                    <p><strong>ตำแหน่ง:</strong> เว็บไซต์โปรแกรมเมอร์ & นักพัฒนา UX/UI</p>
+                    <p><strong>Line ID:</strong> 0848046396</p>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">ยินดีรับคำแนะนำและปรับปรุงแก้ไขเว็บไซต์เพื่อแฟนบอลอาร์เซนอลทุกท่านครับ</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Arsenal Fanpage. Designed by Charn Luangtui. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
